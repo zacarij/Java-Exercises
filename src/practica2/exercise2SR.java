@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package practica2;
 
-/**
- *
- * @author zacarij
- */
 public class exercise2SR {
     
     private int IDR;
@@ -16,8 +8,12 @@ public class exercise2SR {
     private String Group;
     
     public exercise2SR (){
-        IDR = 12233;
-        DescR = "Test";
+        
+    }
+    
+    public void Assign (int ID, String Desc){
+        this.IDR = ID;
+        this.DescR = Desc;
         Group = "Service Desk";
     }
 
@@ -44,7 +40,5 @@ public class exercise2SR {
     public void setGroup(String Group) {
         this.Group = Group;
     }
-    
-    
     
 }

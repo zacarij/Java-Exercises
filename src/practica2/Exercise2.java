@@ -1,39 +1,49 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package practica2;
 import java.util.Scanner;
-/**
- *
- * @author zacarij
- */
+import java.util.Random;
+
 public class Exercise2 {
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
     
     int j;
+    int id;
+    String Desc;
     Scanner ti = new Scanner (System.in);
-    
+    Scanner des = new Scanner (System.in);
     System.out.println ("Select the type of ticket to create");
     j = ti.nextInt();
     switch (j){
         case 1:
-            exercise2SR ticket = new exercise2SR();
-            System.out.println("El ID is: "+ticket.getIDR());
+            exercise2SR service = new exercise2SR();
+            Random i = new Random ();
+            id = i.nextInt(1 + 20)+1;
+            System.out.println("Introduce la descripcion: ");
+            Desc = des.nextLine ();
+            service.Assign(id, Desc);
+            System.out.println("Your ticket information below: ");
+            System.out.println ("ID: "+service.getIDR());
+            System.out.println ("Description: "+service.getDescR());
+            System.out.println ("Assigned Group: "+service.getGroup());
             break;
         case 2:
             exercise2I inci = new exercise2I();
-            System.out.println("La pri es: "+inci.getPri()+" y el ID es "+inci.getIDR());
+            Random k = new Random();
+            id = k.nextInt(1 + 20)+1;
+            System.out.println("Introduce la descripcion: ");
+            Desc = des.nextLine ();
+            inci.Assign(id, Desc);
+            System.out.println("Your ticket information below: ");
+            System.out.println ("ID: "+inci.getIDR());
+            System.out.println ("Description: "+inci.getDescR());
+            System.out.println ("Assigned Group: "+inci.getGroup());
+            System.out.println ("Priority: "+inci.getPri());
             break;
             
         }
-        
-        
+                
     }
     
 }
