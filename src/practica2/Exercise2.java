@@ -5,7 +5,6 @@ import java.util.Random;
 
 public class Exercise2 {
 
-
     public static void main(String[] args) {
     
     int j;
@@ -13,14 +12,15 @@ public class Exercise2 {
     String Desc;
     Scanner ti = new Scanner (System.in);
     Scanner des = new Scanner (System.in);
-    System.out.println ("Select the type of ticket to create");
+    System.out.println ("Submit a ticket:");
+    System.out.println ("Press 1 to submit a Service Request or 2 to submit an Incident");
     j = ti.nextInt();
     switch (j){
         case 1:
             exercise2SR service = new exercise2SR();
             Random i = new Random ();
             id = i.nextInt(1 + 20)+1;
-            System.out.println("Introduce la descripcion: ");
+            System.out.println("Introduce the description: ");
             Desc = des.nextLine ();
             service.Assign(id, Desc);
             System.out.println("Your ticket information below: ");
