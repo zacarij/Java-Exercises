@@ -2,9 +2,7 @@
 package practica2;
 
 public class Book {
-
-   
-
+    
     private String bookName;
     private String editor;
     private String writer;
