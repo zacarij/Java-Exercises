@@ -8,7 +8,8 @@ public class Library {
     public static void main(String[] args) {
     int optionInput = 0;
     String bookName;
-    int test;
+    String caseAnswer;
+        
     Scanner input = new Scanner (System.in);
         System.out.println("Please, select an option:");
         System.out.println("****************************");
@@ -25,11 +26,20 @@ public class Library {
     }    
     switch (optionInput){
         case 1:
-            System.out.println("Please enter the name of the book");
-            Scanner name = new Scanner (System.in);            
-            bookName = name.nextLine();
-            Book book1 = new Book(bookName);
-            System.out.println("The book " + book1.getBookName()+ "has been submitted successfully");
+            System.out.println("Do you have the following information:");
+            System.out.println("Name, Editor, Writer");
+            caseAnswer = input.nextLine();
+            Scanner bookdetails = new Scanner (System.in);
+            if (caseAnswer.equals ("yes")){
+               System.out.println("Please, introduce the name");
+               bookName = bookdetails.nextLine(); 
+                
+            } else {
+                bookName = bookdetails.nextLine();
+                Book book1 = new Book(bookName);
+            }
+                        
+            System.out.println("The book " + book1.getBookName()+ " has been submitted successfully");
             break;
         case 2:
             System.out.println("Two");
